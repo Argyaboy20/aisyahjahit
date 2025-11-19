@@ -1,0 +1,465 @@
+/* ========== Global Variables ========== */
+:root {
+  --primary-blue: #87CEEB;
+  --secondary-blue: #4A90E2;
+  --dark-blue: #2C5F8D;
+  --light-blue: #E0F4FF;
+  --white: #FFFFFF;
+  --gray-light: #F5F5F5;
+  --gray-text: #666666;
+  --dark-text: #333333;
+  --shadow: rgba(0, 0, 0, 0.1);
+}
+
+/* ========== Header Styles ========== */
+.custom-header {
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+}
+
+.custom-toolbar {
+  --background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  --border-width: 0 0 1px 0;
+  --border-color: rgba(200, 200, 200, 0.3);
+  padding: 8px 20px;
+  --min-height: 60px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.brand-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--secondary-blue);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: left;
+  padding-left: 0;
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.nav-btn {
+  --background: transparent;
+  --color: var(--dark-blue);
+  --border-radius: 8px;
+  --padding-start: 16px;
+  --padding-end: 16px;
+  font-weight: 600;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--primary-blue);
+    transform: translateX(-50%);
+    transition: width 0.3s ease;
+  }
+
+  &:hover {
+    --background: rgba(135, 206, 235, 0.15);
+    --color: var(--secondary-blue);
+    transform: translateY(-2px);
+
+    &::before {
+      width: 80%;
+    }
+  }
+}
+
+/* ========== Galeri Content ========== */
+.galeri-content {
+  --background: #4A90E2;
+}
+
+/* ========== Galeri Hero Section ========== */
+.galeri-hero {
+  margin-top: 60px;
+  padding: 80px 20px;
+  text-align: center;
+  background: linear-gradient(135deg, rgba(44, 95, 141, 0.8) 0%, rgba(74, 144, 226, 0.9) 100%);
+}
+
+.galeri-hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.galeri-title {
+  font-size: 48px;
+  font-weight: 800;
+  color: var(--white);
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.galeri-subtitle {
+  font-size: 20px;
+  color: var(--white);
+  font-weight: 400;
+  opacity: 0.95;
+}
+
+/* ========== Gallery Section ========== */
+.gallery-section {
+  padding: 60px 20px;
+  background: #4A90E2;
+}
+
+.gallery-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 25px;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  cursor: pointer;
+  aspect-ratio: 4 / 3;
+  background: #000000;
+  border: 3px solid var(--primary-blue);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 8px 25px rgba(135, 206, 235, 0.4);
+    border-color: var(--white);
+
+    .gallery-image {
+      transform: scale(1.1);
+    }
+
+    .gallery-overlay {
+      opacity: 1;
+    }
+  }
+}
+
+.gallery-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.gallery-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.3) 50%, transparent 100%);
+  display: flex;
+  align-items: flex-end;
+  padding: 25px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.gallery-info {
+  color: var(--white);
+  text-align: left;
+  width: 100%;
+
+  h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0 0 8px 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+
+  p {
+    font-size: 14px;
+    margin: 0;
+    opacity: 0.9;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  }
+}
+
+/* ========== CTA Gallery Section ========== */
+.cta-gallery {
+  padding: 60px 20px;
+  background: linear-gradient(135deg, rgba(44, 95, 141, 0.9) 0%, rgba(74, 144, 226, 0.8) 100%);
+  text-align: center;
+}
+
+.cta-gallery-content {
+  max-width: 700px;
+  margin: 0 auto;
+
+  h2 {
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+  }
+
+  p {
+    font-size: 18px;
+    color: var(--white);
+    margin-bottom: 30px;
+    opacity: 0.95;
+  }
+}
+
+.cta-button {
+  --background: var(--white);
+  --color: var(--secondary-blue);
+  --border-radius: 30px;
+  --padding-start: 35px;
+  --padding-end: 35px;
+  --box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  font-weight: 700;
+  font-size: 16px;
+  height: 50px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-3px);
+    --box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  }
+
+  ion-icon {
+    font-size: 22px;
+  }
+}
+
+/* ========== Footer ========== */
+.footer {
+  background: #2C5F8D;
+  padding: 30px 20px;
+}
+
+.footer-bottom {
+  text-align: center;
+
+  p {
+    font-size: 14px;
+    color: var(--white);
+    opacity: 0.9;
+    margin: 0;
+  }
+}
+
+/* ========== Responsive Design - Tablet ========== */
+@media (max-width: 768px) {
+  /* Header */
+  .brand-title {
+    font-size: 22px;
+  }
+
+  .nav-buttons {
+    gap: 8px;
+  }
+
+  .nav-btn {
+    --padding-start: 14px;
+    --padding-end: 14px;
+    font-size: 14px;
+  }
+
+  /* Galeri Hero */
+  .galeri-hero {
+    padding: 60px 20px;
+  }
+
+  .galeri-title {
+    font-size: 38px;
+  }
+
+  .galeri-subtitle {
+    font-size: 18px;
+  }
+
+  /* Gallery Section */
+  .gallery-section {
+    padding: 50px 20px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+  }
+
+  .gallery-item {
+    border: 2.5px solid var(--primary-blue);
+  }
+
+  .gallery-overlay {
+    padding: 20px;
+  }
+
+  .gallery-info {
+    h3 {
+      font-size: 18px;
+      margin-bottom: 6px;
+    }
+
+    p {
+      font-size: 13px;
+    }
+  }
+
+  /* CTA Section */
+  .cta-gallery {
+    padding: 50px 20px;
+  }
+
+  .cta-gallery-content {
+    h2 {
+      font-size: 30px;
+    }
+
+    p {
+      font-size: 16px;
+      margin-bottom: 25px;
+    }
+  }
+
+  .cta-button {
+    font-size: 15px;
+    height: 48px;
+    --padding-start: 30px;
+    --padding-end: 30px;
+
+    ion-icon {
+      font-size: 20px;
+    }
+  }
+}
+
+/* ========== Responsive Design - Smartphone ========== */
+@media (max-width: 640px) {
+  /* Header */
+  .custom-toolbar {
+    padding: 8px 10px;
+    --min-height: 45px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .brand-title {
+    font-size: 15px;
+    flex-shrink: 0;
+  }
+
+  .nav-buttons {
+    gap: 3px;
+    margin-right: 0;
+  }
+
+  .nav-btn {
+    --padding-start: 8px;
+    --padding-end: 8px;
+    font-size: 12px;
+    min-width: auto;
+  }
+
+  /* Galeri Hero */
+  .galeri-hero {
+    padding: 50px 15px;
+    margin-top: 45px;
+  }
+
+  .galeri-title {
+    font-size: 28px;
+    margin-bottom: 15px;
+  }
+
+  .galeri-subtitle {
+    font-size: 16px;
+  }
+
+  /* Gallery Section */
+  .gallery-section {
+    padding: 40px 15px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .gallery-item {
+    border: 2px solid var(--primary-blue);
+    aspect-ratio: 3 / 2;
+  }
+
+  .gallery-overlay {
+    padding: 20px;
+    opacity: 1;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.2) 60%, transparent 100%);
+  }
+
+  .gallery-info {
+    h3 {
+      font-size: 17px;
+      margin-bottom: 5px;
+    }
+
+    p {
+      font-size: 13px;
+    }
+  }
+
+  /* CTA Section */
+  .cta-gallery {
+    padding: 40px 15px;
+  }
+
+  .cta-gallery-content {
+    h2 {
+      font-size: 24px;
+      margin-bottom: 12px;
+    }
+
+    p {
+      font-size: 15px;
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+  }
+
+  .cta-button {
+    font-size: 14px;
+    height: 45px;
+    --padding-start: 26px;
+    --padding-end: 26px;
+    width: 100%;
+
+    ion-icon {
+      font-size: 18px;
+    }
+  }
+
+  /* Footer */
+  .footer {
+    padding: 25px 15px;
+  }
+
+  .footer-bottom p {
+    font-size: 12px;
+  }
+}

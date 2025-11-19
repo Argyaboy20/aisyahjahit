@@ -1,0 +1,544 @@
+/* ========== Global Variables ========== */
+:root {
+  --primary-blue: #87CEEB;
+  --secondary-blue: #4A90E2;
+  --dark-blue: #2C5F8D;
+  --light-blue: #E0F4FF;
+  --white: #FFFFFF;
+  --gray-light: #F5F5F5;
+  --gray-text: #666666;
+  --dark-text: #333333;
+  --shadow: rgba(0, 0, 0, 0.1);
+}
+
+/* ========== Header Styles ========== */
+.custom-header {
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+}
+
+.custom-toolbar {
+  --background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  --border-width: 0 0 1px 0;
+  --border-color: rgba(200, 200, 200, 0.3);
+  padding: 8px 20px;
+  --min-height: 60px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.brand-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--secondary-blue);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: left;
+  padding-left: 0;
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.nav-btn {
+  --background: transparent;
+  --color: var(--dark-blue);
+  --border-radius: 8px;
+  --padding-start: 16px;
+  --padding-end: 16px;
+  font-weight: 600;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--primary-blue);
+    transform: translateX(-50%);
+    transition: width 0.3s ease;
+  }
+
+  &:hover {
+    --background: rgba(135, 206, 235, 0.15);
+    --color: var(--secondary-blue);
+    transform: translateY(-2px);
+
+    &::before {
+      width: 80%;
+    }
+  }
+}
+
+/* ========== About Content ========== */
+.about-content {
+  --background: #4A90E2;
+}
+
+/* ========== About Hero Section ========== */
+.about-hero {
+  margin-top: 60px;
+  padding: 80px 20px;
+  text-align: center;
+  background: linear-gradient(135deg, rgba(44, 95, 141, 0.8) 0%, rgba(74, 144, 226, 0.9) 100%);
+}
+
+.about-hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.about-title {
+  font-size: 48px;
+  font-weight: 800;
+  color: var(--white);
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.about-subtitle {
+  font-size: 20px;
+  color: var(--white);
+  font-weight: 400;
+  opacity: 0.95;
+}
+
+/* ========== Story Section ========== */
+.story-section {
+  padding: 60px 20px;
+  background: #4A90E2;
+}
+
+.story-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.story-block {
+  background: #000000;
+  padding: 40px;
+  border-radius: 16px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border: 2px solid var(--primary-blue);
+}
+
+.story-heading {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--dark-blue);
+  margin-bottom: 20px;
+  position: relative;
+  padding-bottom: 15px;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: var(--primary-blue);
+    border-radius: 2px;
+  }
+}
+
+.story-text {
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--dark-text);
+  text-align: justify;
+}
+
+/* ========== Vision Mission Cards ========== */
+.vision-mission {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  margin-top: 20px;
+}
+
+.vm-card {
+  background: linear-gradient(135deg, var(--light-blue) 0%, var(--white) 100%);
+  padding: 30px;
+  border-radius: 12px;
+  border: 2px solid var(--secondary-blue);
+
+  h3 {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--secondary-blue);
+    margin-bottom: 15px;
+  }
+
+  p {
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--dark-text);
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      font-size: 15px;
+      line-height: 1.8;
+      color: var(--dark-text);
+      padding-left: 25px;
+      position: relative;
+      margin-bottom: 10px;
+
+      &::before {
+        content: '✓';
+        position: absolute;
+        left: 0;
+        color: var(--secondary-blue);
+        font-weight: 700;
+        font-size: 18px;
+      }
+    }
+  }
+}
+
+/* ========== Why Choose Section ========== */
+.why-choose {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 25px;
+  margin-top: 20px;
+}
+
+.why-item {
+  text-align: center;
+  padding: 25px;
+  background: linear-gradient(135deg, var(--light-blue) 0%, var(--white) 100%);
+  border-radius: 12px;
+  border: 2px solid var(--secondary-blue);
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  }
+
+  h4 {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--dark-blue);
+    margin: 15px 0 10px;
+  }
+
+  p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--gray-text);
+    margin: 0;
+  }
+}
+
+.why-icon {
+  font-size: 48px;
+  color: var(--secondary-blue);
+}
+
+/* ========== Contact Button ========== */
+.contact-button {
+  --background: var(--secondary-blue);
+  --color: var(--white);
+  --border-radius: 30px;
+  --padding-start: 32px;
+  --padding-end: 32px;
+  --box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  font-weight: 700;
+  font-size: 16px;
+  height: 50px;
+  margin-top: 20px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-3px);
+    --box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  }
+
+  ion-icon {
+    font-size: 22px;
+  }
+}
+
+/* ========== Footer ========== */
+.footer {
+  background: #2C5F8D;
+  padding: 30px 20px;
+}
+
+.footer-bottom {
+  text-align: center;
+
+  p {
+    font-size: 14px;
+    color: var(--white);
+    opacity: 0.9;
+    margin: 0;
+  }
+}
+
+/* ========== Responsive Design - Tablet ========== */
+@media (max-width: 768px) {
+  /* Header */
+  .brand-title {
+    font-size: 22px;
+  }
+
+  .nav-buttons {
+    gap: 8px;
+  }
+
+  .nav-btn {
+    --padding-start: 14px;
+    --padding-end: 14px;
+    font-size: 14px;
+  }
+
+  /* About Hero */
+  .about-hero {
+    padding: 60px 20px;
+  }
+
+  .about-title {
+    font-size: 38px;
+  }
+
+  .about-subtitle {
+    font-size: 18px;
+  }
+
+  /* Story Section */
+  .story-section {
+    padding: 50px 20px;
+  }
+
+  .story-block {
+    padding: 30px;
+    margin-bottom: 25px;
+  }
+
+  .story-heading {
+    font-size: 24px;
+    margin-bottom: 18px;
+  }
+
+  .story-text {
+    font-size: 15px;
+  }
+
+  /* Vision Mission */
+  .vision-mission {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .vm-card {
+    padding: 25px;
+
+    h3 {
+      font-size: 20px;
+    }
+
+    p, li {
+      font-size: 14px;
+    }
+  }
+
+  /* Why Choose */
+  .why-choose {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+  }
+
+  .why-item {
+    padding: 20px;
+
+    h4 {
+      font-size: 17px;
+    }
+
+    p {
+      font-size: 13px;
+    }
+  }
+
+  .why-icon {
+    font-size: 42px;
+  }
+
+  /* Contact Button */
+  .contact-button {
+    font-size: 15px;
+    height: 48px;
+    --padding-start: 28px;
+    --padding-end: 28px;
+
+    ion-icon {
+      font-size: 20px;
+    }
+  }
+}
+
+/* ========== Responsive Design - Smartphone ========== */
+@media (max-width: 640px) {
+  /* Header */
+  .custom-toolbar {
+    padding: 8px 10px;
+    --min-height: 45px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .brand-title {
+    font-size: 15px;
+    flex-shrink: 0;
+  }
+
+  .nav-buttons {
+    gap: 3px;
+    margin-right: 0;
+  }
+
+  .nav-btn {
+    --padding-start: 8px;
+    --padding-end: 8px;
+    font-size: 12px;
+    min-width: auto;
+  }
+
+  /* About Hero */
+  .about-hero {
+    padding: 50px 15px;
+    margin-top: 45px;
+  }
+
+  .about-title {
+    font-size: 28px;
+    margin-bottom: 15px;
+  }
+
+  .about-subtitle {
+    font-size: 16px;
+  }
+
+  /* Story Section */
+  .story-section {
+    padding: 40px 15px;
+  }
+
+  .story-block {
+    padding: 25px 20px;
+    margin-bottom: 20px;
+  }
+
+  .story-heading {
+    font-size: 22px;
+    margin-bottom: 15px;
+    padding-bottom: 12px;
+
+    &::after {
+      width: 50px;
+    }
+  }
+
+  .story-text {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  /* Vision Mission */
+  .vision-mission {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    margin-top: 15px;
+  }
+
+  .vm-card {
+    padding: 20px;
+
+    h3 {
+      font-size: 18px;
+      margin-bottom: 12px;
+    }
+
+    p {
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    ul li {
+      font-size: 13px;
+      line-height: 1.7;
+      margin-bottom: 8px;
+      padding-left: 20px;
+
+      &::before {
+        font-size: 16px;
+      }
+    }
+  }
+
+  /* Why Choose */
+  .why-choose {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    margin-top: 15px;
+  }
+
+  .why-item {
+    padding: 20px 15px;
+
+    h4 {
+      font-size: 16px;
+      margin: 12px 0 8px;
+    }
+
+    p {
+      font-size: 13px;
+    }
+  }
+
+  .why-icon {
+    font-size: 38px;
+  }
+
+  /* Contact Button */
+  .contact-button {
+    font-size: 14px;
+    height: 45px;
+    --padding-start: 24px;
+    --padding-end: 24px;
+    margin-top: 15px;
+    width: 100%;
+
+    ion-icon {
+      font-size: 18px;
+    }
+  }
+
+  /* Footer */
+  .footer {
+    padding: 25px 15px;
+  }
+
+  .footer-bottom p {
+    font-size: 12px;
+  }
+}

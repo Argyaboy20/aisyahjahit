@@ -1,17 +1,150 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 3
+<ion-header [translucent]="true" class="custom-header">
+  <ion-toolbar class="custom-toolbar">
+    <ion-title class="brand-title" (click)="navigateTo('/')">
+      Aisyah Jahit
     </ion-title>
+    <ion-buttons slot="end" class="nav-buttons">
+      <ion-button class="nav-btn" (click)="navigateTo('/about')">
+        About
+      </ion-button>
+      <ion-button class="nav-btn" (click)="navigateTo('/')">
+        Home
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content [fullscreen]="true" class="galeri-content">
+  <!-- Galeri Hero Section -->
+  <section class="galeri-hero">
+    <div class="galeri-hero-content">
+      <h1 class="galeri-title">Galeri Hasil Karya</h1>
+      <p class="galeri-subtitle">Koleksi Busana Berkualitas dari Aisyah Jahit</p>
+    </div>
+  </section>
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+  <!-- Gallery Grid Section -->
+  <section class="gallery-section">
+    <div class="gallery-container">
+      <div class="gallery-grid">
+        <!-- Gallery Item 1 -->
+        <div class="gallery-item" (click)="openImage(0)">
+          <img src="https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?w=800&q=80" alt="Baju Custom" class="gallery-image">
+          <div class="gallery-overlay">
+            <div class="gallery-info">
+              <h3>Baju Custom</h3>
+              <p>Desain modern dan elegan</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Gallery Item 2 -->
+        <div class="gallery-item" (click)="openImage(1)">
+          <img src="https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?w=800&q=80" alt="Celana Formal" class="gallery-image">
+          <div class="gallery-overlay">
+            <div class="gallery-info">
+              <h3>Celana Formal</h3>
+              <p>Jahitan rapi dan presisi</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Gallery Item 3 -->
+        <div class="gallery-item" (click)="openImage(2)">
+          <img src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=800&q=80" alt="Kebaya Tradisional" class="gallery-image">
+          <div class="gallery-overlay">
+            <div class="gallery-info">
+              <h3>Kebaya Tradisional</h3>
+              <p>Detail bordir yang indah</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Gallery Item 4 -->
+        <div class="gallery-item" (click)="openImage(3)">
+          <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=800&q=80" alt="Jas Formal Pria" class="gallery-image">
+          <div class="gallery-overlay">
+            <div class="gallery-info">
+              <h3>Jas Formal Pria</h3>
+              <p>Profesional dan berkelas</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Gallery Item 5 -->
+        <div class="gallery-item" (click)="openImage(4)">
+          <img src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=800&q=80" alt="Dress Pesta" class="gallery-image">
+          <div class="gallery-overlay">
+            <div class="gallery-info">
+              <h3>Dress Pesta</h3>
+              <p>Sempurna untuk acara spesial</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Gallery Item 6 -->
+        <div class="gallery-item" (click)="openImage(5)">
+          <img src="https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?w=800&q=80" alt="Baju Muslimah" class="gallery-image">
+          <div class="gallery-overlay">
+            <div class="gallery-info">
+              <h3>Baju Muslimah</h3>
+              <p>Syar'i dan modis</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Gallery Item 7 -->
+        <div class="gallery-item" (click)="openImage(6)">
+          <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=800&q=80" alt="Kemeja Casual" class="gallery-image">
+          <div class="gallery-overlay">
+            <div class="gallery-info">
+              <h3>Kemeja Casual</h3>
+              <p>Nyaman untuk sehari-hari</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Gallery Item 8 -->
+        <div class="gallery-item" (click)="openImage(7)">
+          <img src="https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?w=800&q=80" alt="Rok & Blouse" class="gallery-image">
+          <div class="gallery-overlay">
+            <div class="gallery-info">
+              <h3>Rok & Blouse</h3>
+              <p>Kombinasi sempurna</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Gallery Item 9 -->
+        <div class="gallery-item" (click)="openImage(8)">
+          <img src="https://images.unsplash.com/photo-1434389677669-e08b4cac3105?w=800&q=80" alt="Dress Casual" class="gallery-image">
+          <div class="gallery-overlay">
+            <div class="gallery-info">
+              <h3>Dress Casual</h3>
+              <p>Simple dan elegan</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-gallery">
+    <div class="cta-gallery-content">
+      <h2>Tertarik dengan Hasil Karya Kami?</h2>
+      <p>Wujudkan desain busana impian Anda bersama kami</p>
+      <ion-button class="cta-button" (click)="contactWhatsApp()">
+        <ion-icon name="logo-whatsapp" slot="start"></ion-icon>
+        Konsultasi Sekarang
+      </ion-button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-bottom">
+      <p>&copy; 2024 Aisyah Jahit. All rights reserved.</p>
+    </div>
+  </footer>
 </ion-content>

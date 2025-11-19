@@ -1,17 +1,241 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 1
+<ion-header [translucent]="true" class="custom-header">
+  <ion-toolbar class="custom-toolbar">
+    <ion-title class="brand-title" (click)="navigateTo('/')">
+      Aisyah Jahit
     </ion-title>
+    <ion-buttons slot="end" class="nav-buttons">
+      <ion-button class="nav-btn" (click)="navigateTo('/about')">
+        About
+      </ion-button>
+      <ion-button class="nav-btn" (click)="navigateTo('/galeri')">
+        Galeri
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content [fullscreen]="true" class="custom-content">
+  <!-- Banner Section -->
+  <section class="banner-section">
+    <div class="banner-overlay"></div>
+    <img src="https://images.unsplash.com/photo-1558551649-e44c8f992010?w=1200&q=80" alt="Aisyah Jahit Banner" class="banner-image">
+    <div class="banner-content">
+      <h1 class="banner-title">Aisyah Jahit</h1>
+      <p class="banner-tagline">Mewujudkan Impian Busana Anda dengan Sentuhan Profesional</p>
+      <ion-button class="cta-button-banner" (click)="contactWhatsAppBanner()">
+        <ion-icon name="logo-whatsapp" slot="start"></ion-icon>
+        Konsultasi Gratis
+      </ion-button>
+    </div>
+  </section>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  <!-- Keunggulan Section -->
+  <section class="advantage-section">
+    <h2 class="section-title">Mengapa Memilih Kami?</h2>
+    <div class="advantage-grid">
+      <div class="advantage-card">
+        <ion-icon name="checkmark-circle" class="advantage-icon"></ion-icon>
+        <h3>Pengalaman 3+ Tahun</h3>
+        <p>Berpengalaman menangani berbagai jenis jahitan dengan hasil berkualitas tinggi</p>
+      </div>
+      <div class="advantage-card">
+        <ion-icon name="time" class="advantage-icon"></ion-icon>
+        <h3>Pengerjaan Cepat</h3>
+        <p>Proses pengerjaan efisien dengan hasil memuaskan sesuai deadline</p>
+      </div>
+      <div class="advantage-card">
+        <ion-icon name="heart" class="advantage-icon"></ion-icon>
+        <h3>Harga Terjangkau</h3>
+        <p>Harga bersahabat dengan kualitas jahitan terbaik untuk Anda</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Layanan & Harga Section -->
+  <section class="service-section">
+    <h2 class="section-title">Layanan & Harga</h2>
+    <div class="service-grid">
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?w=500&q=80" alt="Jahit Baju" class="service-image">
+        <div class="service-info">
+          <h3>Jahit Baju</h3>
+          <p>Pembuatan baju custom sesuai desain dan ukuran Anda</p>
+          <p class="service-price">Mulai dari Rp 150.000</p>
+        </div>
+      </div>
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?w=500&q=80" alt="Jahit Celana" class="service-image">
+        <div class="service-info">
+          <h3>Jahit Celana</h3>
+          <p>Pembuatan celana dengan berbagai model dan bahan pilihan</p>
+          <p class="service-price">Mulai dari Rp 120.000</p>
+        </div>
+      </div>
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1612423284934-2850a4ea6b0f?w=500&q=80" alt="Jahit Gamis" class="service-image">
+        <div class="service-info">
+          <h3>Jahit Gamis</h3>
+          <p>Gamis syar'i dengan desain modern dan elegan</p>
+          <p class="service-price">Mulai dari Rp 200.000</p>
+        </div>
+      </div>
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=500&q=80" alt="Perbaikan Pakaian" class="service-image">
+        <div class="service-info">
+          <h3>Perbaikan Pakaian</h3>
+          <p>Sum celana, ganti resleting, dan perbaikan lainnya</p>
+          <p class="service-price">Mulai dari Rp 25.000</p>
+        </div>
+      </div>
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=500&q=80" alt="Jahit Kebaya" class="service-image">
+        <div class="service-info">
+          <h3>Jahit Kebaya</h3>
+          <p>Kebaya modern dan tradisional untuk acara spesial</p>
+          <p class="service-price">Mulai dari Rp 300.000</p>
+        </div>
+      </div>
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=500&q=80" alt="Jahit Jas" class="service-image">
+        <div class="service-info">
+          <h3>Jahit Jas</h3>
+          <p>Jas formal untuk acara profesional dan resmi</p>
+          <p class="service-price">Mulai dari Rp 350.000</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimoni Section -->
+  <section class="testimonial-section">
+    <h2 class="section-title">Testimoni Pelanggan</h2>
+    <div class="testimonial-grid">
+      <div class="testimonial-card">
+        <div class="testimonial-header">
+          <div class="customer-avatar">S</div>
+          <div class="customer-info">
+            <h4>Siti Nurhaliza</h4>
+            <div class="rating">
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+            </div>
+          </div>
+        </div>
+        <p class="testimonial-text">"Hasilnya sangat memuaskan! Jahitan rapi dan sesuai dengan yang saya inginkan. Pasti akan order lagi."</p>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-header">
+          <div class="customer-avatar">R</div>
+          <div class="customer-info">
+            <h4>Rina Marlina</h4>
+            <div class="rating">
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+            </div>
+          </div>
+        </div>
+        <p class="testimonial-text">"Pelayanan ramah dan cepat. Kebaya untuk pernikahan saya dibuat dengan sempurna. Terima kasih!"</p>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-header">
+          <div class="customer-avatar">A</div>
+          <div class="customer-info">
+            <h4>Ahmad Fauzi</h4>
+            <div class="rating">
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+            </div>
+          </div>
+        </div>
+        <p class="testimonial-text">"Jas yang dijahit sangat pas dan nyaman. Harga juga terjangkau. Recommended banget!"</p>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-header">
+          <div class="customer-avatar">D</div>
+          <div class="customer-info">
+            <h4>Dewi Lestari</h4>
+            <div class="rating">
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star-half"></ion-icon>
+            </div>
+          </div>
+        </div>
+        <p class="testimonial-text">"Gamis pesanan saya jadi tepat waktu dan sesuai ekspektasi. Kualitas jahitan sangat baik."</p>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-header">
+          <div class="customer-avatar">F</div>
+          <div class="customer-info">
+            <h4>Fatimah Zahra</h4>
+            <div class="rating">
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+            </div>
+          </div>
+        </div>
+        <p class="testimonial-text">"Sudah langganan di sini. Selalu puas dengan hasilnya. Pengerjaan cepat dan rapi!"</p>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-header">
+          <div class="customer-avatar">B</div>
+          <div class="customer-info">
+            <h4>Budi Santoso</h4>
+            <div class="rating">
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+            </div>
+          </div>
+        </div>
+        <p class="testimonial-text">"Celana yang diperbaiki kembali seperti baru. Harga sangat murah untuk hasil yang bagus."</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="cta-content">
+      <h2>Siap Mewujudkan Busana Impian Anda?</h2>
+      <p>Pesan sekarang dan dapatkan harga terbaik untuk layanan jahit berkualitas!</p>
+      <ion-button class="cta-button-main" size="large" (click)="contactWhatsAppOrder()">
+        <ion-icon name="logo-whatsapp" slot="start"></ion-icon>
+        Pesan Sekarang
+      </ion-button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Aisyah Jahit</h3>
+        <p>Solusi jahit terpercaya untuk semua kebutuhan busana Anda</p>
+      </div>
+      <div class="footer-section">
+        <h4>Jam Operasional</h4>
+        <p>Senin - Sabtu: 08.00 - 17.00</p>
+        <p>Minggu: Libur</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 Aisyah Jahit. All rights reserved.</p>
+    </div>
+  </footer>
 </ion-content>

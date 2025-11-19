@@ -1,17 +1,121 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 2
+<ion-header [translucent]="true" class="custom-header">
+  <ion-toolbar class="custom-toolbar">
+    <ion-title class="brand-title" (click)="navigateTo('/')">
+      Aisyah Jahit
     </ion-title>
+    <ion-buttons slot="end" class="nav-buttons">
+      <ion-button class="nav-btn" (click)="navigateTo('/')">
+        Home
+      </ion-button>
+      <ion-button class="nav-btn" (click)="navigateTo('/galeri')">
+        Galeri
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content [fullscreen]="true" class="about-content">
+  <!-- About Hero Section -->
+  <section class="about-hero">
+    <div class="about-hero-content">
+      <h1 class="about-title">Tentang Kami</h1>
+      <p class="about-subtitle">Perjalanan Aisyah Jahit dalam Mewujudkan Impian Busana</p>
+    </div>
+  </section>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+  <!-- Story Section -->
+  <section class="story-section">
+    <div class="story-container">
+      <div class="story-block">
+        <h2 class="story-heading">Awal Mula</h2>
+        <p class="story-text">
+          Aisyah Jahit dimulai dari hobi sederhana seorang ibu rumah tangga yang gemar menjahit. 
+          Berawal dari keinginan membuat pakaian untuk keluarga sendiri, lambat laun keahlian ini 
+          berkembang dan mulai dikenal oleh tetangga dan teman-teman di sekitar.
+        </p>
+      </div>
+
+      <div class="story-block">
+        <h2 class="story-heading">Perjalanan 3 Tahun</h2>
+        <p class="story-text">
+          Sejak tahun 2021, Aisyah Jahit resmi melayani masyarakat dengan berbagai jenis layanan 
+          jahit. Dari yang awalnya hanya melayani perbaikan sederhana, kini telah berkembang 
+          menjadi layanan jahit lengkap mulai dari baju, celana, gamis, kebaya, hingga jas formal.
+        </p>
+      </div>
+
+      <div class="story-block">
+        <h2 class="story-heading">Komitmen Kualitas</h2>
+        <p class="story-text">
+          Kami percaya bahwa setiap pakaian memiliki cerita dan makna tersendiri bagi pemakainya. 
+          Oleh karena itu, kami selalu mengutamakan kualitas jahitan, ketepatan waktu, dan 
+          kepuasan pelanggan dalam setiap pesanan yang kami tangani.
+        </p>
+      </div>
+
+      <div class="story-block">
+        <h2 class="story-heading">Visi & Misi</h2>
+        <div class="vision-mission">
+          <div class="vm-card">
+            <h3>Visi</h3>
+            <p>Menjadi layanan jahit terpercaya yang menghadirkan busana berkualitas dengan harga terjangkau untuk semua kalangan.</p>
+          </div>
+          <div class="vm-card">
+            <h3>Misi</h3>
+            <ul>
+              <li>Memberikan layanan jahit berkualitas tinggi</li>
+              <li>Mengutamakan kepuasan pelanggan</li>
+              <li>Menjaga komitmen waktu pengerjaan</li>
+              <li>Menawarkan harga yang bersahabat</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="story-block">
+        <h2 class="story-heading">Mengapa Memilih Kami?</h2>
+        <div class="why-choose">
+          <div class="why-item">
+            <ion-icon name="shield-checkmark" class="why-icon"></ion-icon>
+            <h4>Berpengalaman</h4>
+            <p>Lebih dari 3 tahun melayani berbagai kebutuhan jahit</p>
+          </div>
+          <div class="why-item">
+            <ion-icon name="people" class="why-icon"></ion-icon>
+            <h4>Pelanggan Setia</h4>
+            <p>Ratusan pelanggan yang puas dan kembali lagi</p>
+          </div>
+          <div class="why-item">
+            <ion-icon name="star" class="why-icon"></ion-icon>
+            <h4>Kualitas Terjamin</h4>
+            <p>Jahitan rapi dengan hasil yang memuaskan</p>
+          </div>
+          <div class="why-item">
+            <ion-icon name="cash" class="why-icon"></ion-icon>
+            <h4>Harga Bersahabat</h4>
+            <p>Kualitas premium dengan harga terjangkau</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="story-block">
+        <h2 class="story-heading">Hubungi Kami</h2>
+        <p class="story-text">
+          Kami siap membantu mewujudkan busana impian Anda. Konsultasikan kebutuhan jahit Anda 
+          dengan kami dan dapatkan penawaran terbaik.
+        </p>
+        <ion-button class="contact-button" (click)="contactWhatsApp()">
+          <ion-icon name="logo-whatsapp" slot="start"></ion-icon>
+          Hubungi via WhatsApp
+        </ion-button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-bottom">
+      <p>&copy; 2024 Aisyah Jahit. All rights reserved.</p>
+    </div>
+  </footer>
 </ion-content>
