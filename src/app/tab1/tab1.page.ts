@@ -50,7 +50,7 @@ export class Tab1Page {
  */
   contactWhatsAppService(serviceName: string, servicePrice: string): void {
     const phoneNumber = '6282370809685';
-    const message = `'''AISYAH JAHIT'''
+    const message = `\`\`\`AISYAH JAHIT\`\`\`
   Layanan: ${serviceName}
   Harga: ${servicePrice}
 
