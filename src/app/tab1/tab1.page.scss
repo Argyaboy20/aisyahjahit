@@ -240,6 +240,7 @@
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 4px 15px var(--shadow);
+  cursor: pointer;
   transition: all 0.3s ease;
   border: 2px solid var(--primary-blue);
 
@@ -250,6 +251,10 @@
     .service-image {
       transform: scale(1.1);
     }
+  }
+
+  &:active {
+    transform: translateY(-2px); /* Efek saat diklik */
   }
 }
 
